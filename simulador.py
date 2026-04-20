@@ -1,10 +1,9 @@
 import sympy as sp
-
 print('/////////////////////////////////////////')
 print("/// Simulador de Crescimento de Tumor ///")
 print('/////////////////////////////////////////')
 
-print("\nInforme os dados do modelo de crescimento do tumor:")
+print("\nInforme os dados abaixo.")
 
 crescimento_acelerado = float(input("Crescimento acelerado do tumor (cm) (coeficiente t²): "))
 crescimento_linear = float(input("Crescimento linear do tumor (cm) (coeficiente t): "))
@@ -27,9 +26,8 @@ equacao = sp.Eq(
 resultado = sp.solve(equacao, tempo)
 
 print("\n--- Resultado ---")
-print("O tumor atingirá o tamanho crítico no tempo de (meses):")
+print("O tumor atingirá o tamanho crítico em:")
 
 for valor in resultado:
     if valor.is_real and valor >= 0:
-        print(f"{valor:.1f}")
-
+        print(f"{valor:.1f} meses.")
